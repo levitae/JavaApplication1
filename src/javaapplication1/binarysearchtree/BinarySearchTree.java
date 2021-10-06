@@ -69,7 +69,7 @@ public class BinarySearchTree {
             BinaryNode presentNode = queue.remove();
             System.out.print(presentNode.value + " ");
             if (presentNode.left != null) {
-                queue.add(presentNode.left);
+                queue.add(presentNode.left );
             }
             if (presentNode.right != null) {
                 queue.add(presentNode.right);
