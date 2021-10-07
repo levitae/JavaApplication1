@@ -1,34 +1,14 @@
-package javaapplication1.binarysearchtree;
+package javaapplication1.binarytree.avltree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BinarySearchTree {
+public class AVL {
 
     public BinaryNode root;
 
-    public BinarySearchTree() {
+    public AVL() {
         root = null;
-    }
-
-    // Insert Method
-    private BinaryNode insert(BinaryNode currentNode, int value) {
-        if (currentNode == null) {
-            BinaryNode newNode = new BinaryNode();
-            newNode.value = value;
-            System.out.println("The value successfully inserted");
-            return newNode;
-        } else if (value <= currentNode.value) {
-            currentNode.left = insert(currentNode.left, value);
-            return currentNode;
-        } else {
-            currentNode.right = insert(currentNode.right, value);
-            return currentNode;
-        }
-    }
-
-    public void insert(int value) {
-        root = insert(root, value);
     }
 
     // PreOrder Traversal
@@ -63,13 +43,17 @@ public class BinarySearchTree {
 
     // LevelOrder Traversal
     public void levelOrder() {
+        if (root == null) {
+            System.out.println("Binary Tree is empty");
+            return;
+        }
         Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
         queue.add(root);
         while (!queue.isEmpty()) {
             BinaryNode presentNode = queue.remove();
             System.out.print(presentNode.value + " ");
             if (presentNode.left != null) {
-                queue.add(presentNode.left );
+                queue.add(presentNode.left);
             }
             if (presentNode.right != null) {
                 queue.add(presentNode.right);
@@ -92,9 +76,7 @@ public class BinarySearchTree {
         } else {
             return search(node.right, value);
         }
-        
     }
-    
-    // Delete Node Method
 
+     
 }

@@ -4,7 +4,7 @@ import javaapplication1.animalshelter.Dog;
 import javaapplication1.animalshelter.Cat;
 import javaapplication1.animalshelter.AnimalQueue;
 import javaapplication1.basictree.TreeNode;
-import javaapplication1.binarysearchtree.BinarySearchTree;
+import javaapplication1.binarytree.searchtree.BinarySearchTree;
 import javaapplication1.binarytree.BinaryNode;
 import javaapplication1.binarytree.BinaryTreeArray;
 import javaapplication1.binarytree.BinaryTreeLL;
@@ -157,6 +157,14 @@ public class JavaApplication1 {
         bst.insert(75);
         bst.insert(85);
         bst.levelOrder();
-//        bst.search(bst.root, 40);
+        System.out.println("");
+        bst.deleteNode(bst.root, 90);
+        bst.levelOrder();
+        System.out.println("");
+        bst.insert(90);
+        bst.levelOrder();
+        System.out.println("");
+        bst.deleteTree();
+        bst.levelOrder();
     }
 }
